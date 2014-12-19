@@ -8,7 +8,7 @@ var UI = require('ui');
 var Vector2 = require('vector2');
 
 var main = new UI.Card({
-  title: 'Pebble.js',
+  title: '中文标题',
   icon: 'images/menu_icon.png',
   subtitle: 'Hello World!',
   body: 'Press any button.'
@@ -24,7 +24,7 @@ main.on('click', 'up', function(e) {
         icon: 'images/menu_icon.png',
         subtitle: 'Can do Menus'
       }, {
-        title: 'Second Item',
+        title: '中文Item',
         subtitle: 'Subtitle Text'
       }]
     }]

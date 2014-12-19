@@ -81,14 +81,15 @@ struct.types.cstring.get = function(offset) {
 };
 
 struct.types.cstring.set = function(offset, value) {
-  this._grow(offset + value.length + 1);
+  var utf8value = unescape(encodeURIComponent(value));
+  this._grow(offset + utf8value.length + 1);
   var i = offset;
   var buffer = this._view;
-  for (var j = 0, jj = value.length; j < jj && value[i] !== '\0'; ++i, ++j) {
-    buffer.setUint8(i, value.charCodeAt(j));
+  for (var j = 0, jj = utf8value.length; j < jj && utf8value[i] !== '\0'; ++i, ++j) {
+    buffer.setUint8(i, utf8value.charCodeAt(j));
   }
   buffer.setUint8(i, 0);
-  this._advance = value.length + 1;
+  this._advance = utf8value.length + 1;
 };
 
 struct.types.data.get = function(offset) {
