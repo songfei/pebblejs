@@ -1,5 +1,5 @@
-Pebble.js
-=========
+Pebble.js 中文支持
+===================
 
 Pebble.js lets you write beautiful Pebble applications completely in JavaScript.
 
